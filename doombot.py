@@ -16,10 +16,11 @@ def show_menu():
 
             # Step 1: Click region.png
             try:
-                region = pyautogui.locateOnScreen("region.png", confidence=0.8)
+                region = pyautogui.locateOnScreen("region.png", confidence=0.9)
                 if region:
                     center = pyautogui.center(region)
                     pyautogui.moveTo(center.x, center.y, duration=1)
+                    time.sleep(1)
                     pyautogui.click()
                 else:
                     print("region.png not found.")
